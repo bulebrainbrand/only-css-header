@@ -1,0 +1,271 @@
+body {
+    font-size: 15pt;
+}
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top:0;
+  padding-top:0.4em;
+  overflow-x:hidden;
+  width:100%;
+  z-index:1;
+  text-align:center;
+  border:solid 0.11em;
+  background-color:black;
+  border-image-source: linear-gradient(45deg,blue, skyblue);
+  border-image-slice:1;
+}
+
+:root{
+  --train-color:#666;
+  --show-width:1000px
+}
+
+.double-train__div{
+  position: relative;
+}
+
+.double-train__div--down{
+  position: absolute !important;
+  transform: translateY(50px)
+}
+
+.train__div{
+  position: relative;
+  width:100%;
+  display:flex;
+  gap:0.04em;
+  animation:train-run 30s linear infinite;
+}
+
+.train__div--train{
+  background-color:var(--train-color);
+  width:2em;
+  height:0.5em;
+  position: relative;
+  border:solid #111 0.01em;
+}
+
+.train__div--train::before{
+  content:"";
+  background-color: #444;
+  width:100%;
+  height:0.08em;
+  top:0.3em;
+  right:0;
+  position: absolute;
+}
+
+.train__div--train-right-head{
+  border-top-right-radius:0.1em;
+  position: relative;
+  z-index:0;
+}
+
+.train__div--train-right-head::after{
+  position: absolute;
+  width:0.1em;
+  height:0.1em;
+  border-radius:0.1em;
+  background-color: yellow;
+  content:"";
+  top:0.3em;
+  right:-0.05em;
+  z-index:1;
+  animation:train-run-light 30s linear infinite reverse;
+}
+
+.train__div--reverse,.train__div--reverse .train__div--train-right-head::after,.train__div--reverse .train__div--train-left-head::after{
+  animation-delay:-17s;
+}
+
+
+
+
+
+
+
+.train__div--train-left-head{
+  border-top-left-radius:0.1em;
+  position: relative;
+}
+
+.train__div--train-left-head::after{
+  position: absolute;
+  width:0.1em;
+  height:0.1em;
+  border-radius:0.1em;
+  background-color: yellow;
+  content:"";
+  top:0.3em;
+  right:1.95em;
+  z-index:1;
+  animation:train-run-light 30s linear infinite;
+}
+
+@keyframes train-run {
+  0%{
+    transform: translateX(-60%);
+    z-index:3;
+  }
+  50%{
+    transform: translateX(120%);
+    z-index:2;
+  }
+  99%{
+    z-index:2;
+  }
+  100%{
+    z-index:2;
+    transform: translateX(-60%);
+  }
+}
+
+@keyframes train-run-light{
+  0%{
+    background-color: red;
+  }
+  49%{
+    background-color: red;
+  }
+  50%{
+    background-color: yellow;
+  }
+  100%{
+    background-color: yellow;
+  }
+}
+
+.bridge__div{
+  position: relative;
+  z-index:1;
+  width:100%;
+  display:flex;
+  overflow-x:hidden;
+  flex-wrap: nowrap;
+  height:3em;
+  gap:5.8em;
+  padding-left:3em; 
+  border-top:solid 0.3em #333;
+}
+
+.pier__div{
+  flex-shrink: 0;
+  width:0.5em;
+  background-color: #333;
+  border-bottom: solid #777 0.2em;
+}
+
+.bills__div{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+
+.bill__table{
+  border-collapse: separate;
+  padding:0.02em;
+}
+
+.bill__table--1 th{
+  content:"";
+  width:0.3em;
+  height:0.5em;
+/*  background-color: #ccbb00;*/
+  border-radius:0.05em;
+}
+
+.bill__table--1{
+  border-spacing: 0.4em;
+  position: absolute;
+  z-index:0;
+  padding-bottom:1em;
+  top:0px;
+  left:10px;
+}
+
+.bill__table--1,.bill__table--1 *{
+  background-color: #222;
+  border-color: #222;
+  
+}
+
+.bill__table--2{
+  border-spacing: 0.8em;
+  position: absolute;
+  padding-bottom:1em;
+  top:-10px;
+  left:90px;
+  z-index:8;
+}
+
+.bill__table--2,.bill__table--2 *{
+  background-color: #444;
+  border-color: #444;
+  
+}
+
+.bill__table--2 th{
+  content:"";
+  width:0.5em;
+  height:0.7em;
+  background-color: #ccbb00;
+  border-radius:0.1em;
+}
+
+.bill__table--3{
+  border-spacing: 0.3em;
+  position: absolute;
+  padding-bottom:0.3em;
+  top:20px;
+  left:250px;
+  z-index:0;
+}
+
+.bill__table--3,.bill__table--3 *{
+  background-color: #222;
+  border-color: #222;
+  
+}
+
+.bill__table--3 th{
+  content:"";
+  width:0.1em;
+  height:0.2em;
+  border-radius:0.01em;
+}
+
+.bill__table--3 th:not([data-light="off"]){
+  background-color:#ccaa00;
+}
+
+.bill__table--4{
+  width: max-content;
+  border-spacing: 1em;
+  position: absolute;
+  padding-bottom:1em;
+  padding-right:0;
+  top:-40px;
+  left:340px;
+  z-index:9;
+}
+
+.bill__table--4,.bill__table--4 *{
+  background-color: #555;
+  border-color: #555;
+  
+}
+
+.bill__table--4 th{
+  content:"";
+  width:0.9em;
+  height:1.2em;
+  background-color: #fc0;
+  border-radius:0.2em;
+}
