@@ -22,7 +22,6 @@ header {
 
 :root{
   --train-color:#666;
-  --show-width:1000px
 }
 
 .double-train__div{
@@ -171,7 +170,7 @@ header {
   padding:0.02em;
 }
 
-.bill__table--1 th{
+.bill__table--1 td{
   content:"";
   width:0.3em;
   height:0.5em;
@@ -209,7 +208,7 @@ header {
   
 }
 
-.bill__table--2 th{
+.bill__table--2 td{
   content:"";
   width:0.5em;
   height:0.7em;
@@ -232,14 +231,14 @@ header {
   
 }
 
-.bill__table--3 th{
+.bill__table--3 td{
   content:"";
   width:0.1em;
   height:0.2em;
   border-radius:0.01em;
 }
 
-.bill__table--3 th:not([data-light="off"]){
+.bill__table--3 td:not([data-light="off"]){
   background-color:#ccaa00;
 }
 
@@ -260,7 +259,7 @@ header {
   
 }
 
-.bill__table--4 th{
+.bill__table--4 td{
   content:"";
   width:0.9em;
   height:1.2em;
