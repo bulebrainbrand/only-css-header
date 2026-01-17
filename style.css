@@ -9,12 +9,9 @@ body {
 }
 
 header {
-  position: sticky;
-  top:0;
   padding-top:0.4em;
   overflow-x:hidden;
   width:100%;
-  height:fit-content;
   z-index:1;
   text-align:center;
   border:solid 0.11em;
